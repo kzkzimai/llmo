@@ -1,0 +1,6 @@
+Flask
+Flask-HTTPAuth
+requests
+beautifulsoup4
+openai
+python-dotenv

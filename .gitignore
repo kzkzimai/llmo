@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.log
+
+# Environments
+.env
+.venv/
+env/
+venv/
+ENV/
+
+# VSCode
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Temp files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Flask-specific
+instance/
+*.db
+*.sqlite
+*.sqlite3
+llms.txt
+tmp*/  # tempfileで生成される一時ディレクトリ
+
+# IDEs
+.idea/
+
+# Jupyter / Colab (if used)
+.ipynb_checkpoints/
+
+# OS trash
+Thumbs.db
