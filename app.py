@@ -8,9 +8,6 @@ import os
 from openai import OpenAI
 from dotenv import load_dotenv
 
-# Load environment variables
-from dotenv import load_dotenv
-
 load_dotenv()  # .env を読み込む
 openai_api_key = os.getenv("OPENAI_API_KEY")  # 変数を取得
 
@@ -29,10 +26,11 @@ def verify_password(username, password):
     if username in users and check_password_hash(users.get(username), password):
         return username
 
-# メタ情報取得
+# メタ情報取得（文字化け対策付き）
 def fetch_metadata(url):
     try:
         response = requests.get(url, timeout=5)
+        response.encoding = response.apparent_encoding  # ← 文字化け防止の追加行
         soup = BeautifulSoup(response.text, 'html.parser')
         title = soup.title.string.strip() if soup.title else "No Title"
         desc_tag = soup.find("meta", attrs={"name": "description"}) or soup.find("meta", attrs={"property": "og:description"})
