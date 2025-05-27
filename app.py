@@ -9,7 +9,10 @@ from openai import OpenAI
 from dotenv import load_dotenv
 
 # Load environment variables
-load_dotenv()
+from dotenv import load_dotenv
+
+load_dotenv()  # .env を読み込む
+openai_api_key = os.getenv("OPENAI_API_KEY")  # 変数を取得
 
 client = OpenAI()
 
